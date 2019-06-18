@@ -11,8 +11,8 @@ _poteguj proc near
     ; zwraca liczbe podniesion¹ do n-tej potêgi gdzie n to argument wejsciowy
 	push ebp
 	mov ebp, esp
-	mov eax, [esp + 8]		; pierwszy argument - podstawa
-	mov ecx, [esp + 12]		; drugi argument - wykladnik
+	mov eax, [ebp + 8]		; pierwszy argument - podstawa
+	mov ecx, [ebp + 12]		; drugi argument - wykladnik
 	cmp ecx, 0
 	je potega_zero
 	jl ujemna_potega
@@ -32,7 +32,7 @@ ujemna_potega:
 potega_zero:
 	mov eax, 1
 koniec:
-    pop ebp
+	pop ebp
 	ret                   
 _poteguj endp
 end
